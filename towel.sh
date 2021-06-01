@@ -56,7 +56,9 @@ if [ -d "day$1" ]; then
   		git pull
   		cd ..
 	else
-		git clone vogsphere@vgs.42.us.org:intra/2018/activities/piscine_c_day_$1/$USER day$1
+		echo "Sup Arya, input your vogsphere link for day $1 here:"
+		read vogsphere_link
+		git clone $vogsphere_link day$1
 fi
 ln -s /tmp/toweltmp/day$1 $full_path
 ./spawn.pl day$1 config_d$1.pl
